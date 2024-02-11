@@ -12,3 +12,5 @@ ide : 인텔리j
 라이브러리 : 스프링 시큐리티,롬복
 
 db : mysql, spring data jpa
+
+템플릿 엔진 : jsp
