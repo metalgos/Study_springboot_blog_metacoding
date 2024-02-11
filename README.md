@@ -1,4 +1,9 @@
-# Study_springboot_blog_metacoding
+
+# 0. 스프링부트 개념정리(미리 공부 추천)
+https://www.youtube.com/watch?v=XBG6CUtVCIg&list=PL93mKxaRDidG_OIfRQ4nztPQ13y74lCYg&index=1&pp=iAQB
+
+
+# 1. Study_springboot_blog_metacoding
 ## 스터디 스프링부트 블로그 프로젝트 유투브 메타코딩
 
 
