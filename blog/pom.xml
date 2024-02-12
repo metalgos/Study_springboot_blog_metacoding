@@ -29,9 +29,9 @@
 -->
 		<!-- JSP 템플릿 엔진 -->
 		<dependency>
-			<groupId>org.apache.tomcat</groupId>
-			<artifactId>tomcat-jasper</artifactId>
-			<version>9.0.22</version>
+			<groupId>org.apache.tomcat.embed</groupId>
+			<artifactId>tomcat-embed-jasper</artifactId>
+
 		</dependency>
 
 		<!-- JSTL -->
