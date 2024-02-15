@@ -1,13 +1,10 @@
 package com.cos.blog.test;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-//@Getter
-//@Setter
+import lombok.*;
+
 @Data
-//@AllArgsConstructor
+
+@NoArgsConstructor
 public class Member {
 
 
@@ -16,4 +13,11 @@ public class Member {
     private  String password;
     private  String email;
 
+    @Builder //빌더 패턴을 위한 어노테이션 파라미터 순서에 상관없이 사용하기
+    public Member(int id, String username, String password, String email) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+        this.email = email;
+    }
 }
