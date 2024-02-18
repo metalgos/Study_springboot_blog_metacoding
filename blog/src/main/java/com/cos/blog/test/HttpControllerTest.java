@@ -12,6 +12,7 @@ public class HttpControllerTest {
         return "get 요청 " + m.getId() +" " +  m.getUsername()+" " +m.getPassword() +" " +m.getEmail();
     }
     
+
     @PostMapping("/http/post") // 텍스트 플레인, 제이슨 테스트
     public String posetTest(@RequestBody Member m){ //메시지 컨버터가 제이슨으로 변경
         return "post 요청 "+ m.getId() +" " +  m.getUsername()+" " +m.getPassword() +" " +m.getEmail();
