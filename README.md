@@ -25,3 +25,6 @@ db : mysql, spring data jpa
 설정 블로그 : https://www.google.com/search?q=getinthere.tistory%2F16&oq=getinthere.tistr&gs_lcrp=EgZjaHJvbWUqCQgBEAAYDRiABDIGCAAQRRg5MgkIARAAGA0YgAQyCQgCEAAYDRiABDIJCAMQABgNGIAEMgkIBBAAGA0YgAQyBggFEEUYQTIGCAYQRRg80gEJMTA5NDRqMGo3qAIAsAIA&sourceid=chrome&ie=UTF-8
 
 유투브 : https://www.youtube.com/watch?v=rpcoHCXgGnQ&list=PL93mKxaRDidECgjOBjPgI3Dyo8ka6Ilqm&index=5
+
+
+개념정리부터 읽고 시작 추천
