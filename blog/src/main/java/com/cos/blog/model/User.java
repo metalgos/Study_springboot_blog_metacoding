@@ -1,5 +1,9 @@
 package com.cos.blog.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.ColumnDefault;
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -7,6 +11,11 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 //ORM - > 자바 오브젝트를 테이블로 매핑해준다.
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder //빌더패턴
 @Entity //User 클래스가 mysql 테이블이 생성이 된다
 public class User {
 
