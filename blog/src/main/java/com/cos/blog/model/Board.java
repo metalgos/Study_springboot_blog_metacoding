@@ -9,6 +9,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.List;
 
 
 @Data
@@ -30,9 +31,14 @@ public class Board {
     @ColumnDefault("0") //숫자는 홑따옴표 필요없음
     private int count; //조회수
 
-    @ManyToOne //many = board, one= user 한 유저는 여러 board를 사용가능
+    @ManyToOne (fetch = FetchType.EAGER)//many = board, one= user 한 유저는 여러 board를 사용가능
+    //패치타입 : board테이블을 가져올떄 조인된 테이블을 무조건 가져올지 아닐지 결정. 기본은 lazy(필요시가져옴), eager는 무조건 가져옴
     @JoinColumn(name = "userid") //fk로 사용할 이름을 입력
     private User user; // db는 오브젝트를 저장할수 없다. FK를 그래서 사용. 하지만 자바는 오브젝트는 오브젝트를 저장할수 있다.
+
+    @OneToMany(mappedBy = "board",fetch = FetchType.EAGER) // mapped : 연관관계(foreinkey)의 주인이 아니다. 외래키가 board가 아니라 reply 테이블에 만들어짐
+    // 조인시 값을 가져오기 위해 columm 어노테이션 사용안함
+    private List<Reply> reply;
 
     @CreationTimestamp
     private Timestamp createDate;
