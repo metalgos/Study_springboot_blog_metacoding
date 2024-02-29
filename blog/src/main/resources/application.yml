@@ -25,7 +25,7 @@ spring:
   jpa:
     open-in-view: true
     hibernate:
-      ddl-auto: create #create로 되있으면 서버 실행시 테이블 재생성, update는 테이블 있으면 놔둔다
+      ddl-auto: update #create로 되있으면 서버 실행시 테이블 재생성, update는 테이블 있으면 놔둔다
       naming:
         physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl  # 테이블 이름을 정하는 전략, 카멜표기법과 _언더바 전략중 하나를 정한다.
       use-new-id-generator-mappings: false  #jpa 기본전략을 사용하지 않는다
