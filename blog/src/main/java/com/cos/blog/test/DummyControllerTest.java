@@ -42,14 +42,17 @@ public class DummyControllerTest {
         });
 */
 
-        User user = userRepository.findById(id).orElseThrow(new Supplier<IllegalArgumentException>() {
+        User user = userRepository.findById(id).orElseget(new Supplier<IllegalArgumentException>() {
             @Override
             public IllegalArgumentException get() {
                 return new IllegalArgumentException("해당유저는 없습니다. id : "+id);
             }
         });
-
-
+        //요청 : 웹
+        //user객체 - 자바오브젝트
+        //자바 객체는 웹 프라우저가 이해할수 있도록 json으로 변경해서 반환됨
+        //예전에는 gson 라이브러리 이용, 스프링부트는 메세지 컨버터가 응답시 자동작동
+        //스프링 부트는 만약에 자바 오브젝트를 리턴하게 되면 메세지컨버터가 jackson라이브러리 호출해서 자동변환
         return user;
     }
 
