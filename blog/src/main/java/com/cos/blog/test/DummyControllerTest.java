@@ -4,6 +4,7 @@ import com.cos.blog.model.RoleType;
 import com.cos.blog.model.User;
 import com.cos.blog.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -28,31 +29,44 @@ public class DummyControllerTest {
         return userRepository.findAll();
     }
 
+
+    @DeleteMapping("/dummy/user/{id}")
+    public String delete(@PathVariable int id) {
+
+        try {
+            userRepository.deleteById(id);
+        } catch (EmptyResultDataAccessException e) {
+            return "삭제에 실패하였습니다. db에 해당 id가 없습니다.";
+        }
+        return "삭제 되었습니다. id : " + id;
+    }
+
+
     //save함수는 id전달 하지 않으면 insert 한다
     //save함수가 id가 있을때 db에 해당 정보가 존재하면 update, 없으면 insert 해준다
     //email, password 받기
 
-    @Transactional
+    @Transactional //함수 종료시 자동 commit 이 됨.
     @PutMapping("/dummy/user/{id}")
-    public  User updateUser(@PathVariable int id, @RequestBody User requestUser){
+    public User updateUser(@PathVariable int id, @RequestBody User requestUser) {
         //json 데이터를 자바 오브젝트로 변환, 메세지컨버터의 jackson 라이브러리가 담당함
 
-        System.out.println( "id : "+ id);
-        System.out.println( "password : " + requestUser.getPassword());
-        System.out.println( "email : " + requestUser.getEmail());
+        System.out.println("id : " + id);
+        System.out.println("password : " + requestUser.getPassword());
+        System.out.println("email : " + requestUser.getEmail());
 
-        User user = userRepository.findById(id).orElseThrow(()->{
+        User user = userRepository.findById(id).orElseThrow(() -> {
 
             return new IllegalArgumentException("수정에 실패하였습니다");
         });
         user.setPassword(requestUser.getPassword());
-        user.setEmail(requestUser.getEmail());
+        user.setEmail(requestUser.getEmail()); //영속성 값이 변경 되므로 transactional로 커밋될떄 자동 없데이트 됨
 
         // save함수는 insert와 update 두개 모두 담당, id가 있다면 update해줌, 단 빈 값을 null로채우므로 업데이트용으로는 잘 안쓴다
         // update는 더티 체킹을 이용한다 @transactional
         // userRepository.save(user);
 
-        return null;
+        return user;
     }
 
     @GetMapping("dummy/user")
@@ -61,7 +75,7 @@ public class DummyControllerTest {
         Page<User> pagingUser = userRepository.findAll(pageable);
 
         //페이징이 첫번쨰 인가?
-        if(pagingUser.isFirst()){
+        if (pagingUser.isFirst()) {
 
 
         }
