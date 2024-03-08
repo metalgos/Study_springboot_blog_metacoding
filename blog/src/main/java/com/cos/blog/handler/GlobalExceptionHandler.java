@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class GlobalExceptionHandler {
 
-    @ExceptionHandler(value = Exception.class)
+    @ExceptionHandler(value = Exception.class)//( 에러에 따라 리턴값 다르게 설정가능)
     public String handleArgumentException(Exception e){
 
         return "<h1>" +e.getMessage()+"</h1>";
