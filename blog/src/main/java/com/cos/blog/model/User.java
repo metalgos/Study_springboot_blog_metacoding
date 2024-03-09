@@ -25,7 +25,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)// 프로젝트에서 연결된 DB의 넘버링 전략을 따라간다(오라클이면 시퀀스, mysql은 오토 인크리먼트
     private int id;//오라클 시퀀스, 마리아 오토 인크리먼트
 
-    @Column(nullable = false, length = 30)
+    @Column(nullable = false, length = 30, unique = true) //중복 방지하기 위해서 unique 옵션 사용
     private String username ; //아이디
     @Column(nullable = false, length = 100) // 12345 -> 해쉬(암호화)
     private String password;
