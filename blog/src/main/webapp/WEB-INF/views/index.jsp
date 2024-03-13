@@ -31,7 +31,6 @@
   </nav>
 
 
-
 <footer class="">
   <div class="jumbotron text-center">
 
