@@ -31,6 +31,35 @@
   </nav>
 
 
+  <div class="container">
+
+  <div class="card m-2">
+    <div class="card-body">
+      <h5 class="card-title">제목 적는 부분</h5>
+      <p class="card-text">내용 적는 부분</p>
+      <a href="#" class="btn btn-primary">상세보기</a>
+    </div>
+  </div>
+
+  <div class="card m-2">
+    <div class="card-body">
+      <h5 class="card-title">제목 적는 부분</h5>
+      <p class="card-text">내용 적는 부분</p>
+      <a href="#" class="btn btn-primary">상세보기</a>
+    </div>
+  </div>
+
+
+  <div class="card m-2">
+    <div class="card-body">
+      <h5 class="card-title">제목 적는 부분</h5>
+      <p class="card-text">내용 적는 부분</p>
+      <a href="#" class="btn btn-primary">상세보기</a>
+    </div>
+  </div>
+
+  </div>
+
 <footer class="">
   <div class="jumbotron text-center">
 
@@ -39,6 +68,9 @@
     <p>대한 서울시 33동</p>
 
   </div>
+
+
+
 </footer>
 
    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
