@@ -1,4 +1,3 @@
-
 server:
   port: 8000
   servlet:
@@ -8,13 +7,14 @@ server:
       enabled: true
       force: true
 
-
-
 spring:
   mvc:
     view:
       prefix: /WEB-INF/views/
       suffix: .jsp
+  web:
+    resources:
+      static-locations: classpath:/static
 
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
