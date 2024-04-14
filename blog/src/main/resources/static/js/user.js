@@ -18,5 +18,4 @@ let index = {
     }
 };
 
-
 index.init();
