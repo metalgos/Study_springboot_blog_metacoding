@@ -15,6 +15,7 @@ let index = {
        // console.log(data);
        $.ajax().dong().fail(): // ajax 톻신 이용해서 3개의 데이터를 json으로 변경하여 insert 요청!!
     }
+    
 };
 
 
